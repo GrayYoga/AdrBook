@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app="AddressBookApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Справочник адресов</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-cloak>
+        <div ng-controller="AddressBookController">
+            <h1  class="page-header">Справочник</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Стана</th>
+                        <th>Город</th>
+                        <th>Улица</th>
+                        <th>Дом</th>
+                        <th>Индекс</th>
+                        <th>Дата</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+
+                    <tr ng-repeat="address in addresses.data">
+                        <td>{{address.id}}</td>
+                        <td>{{address.country}}</td>
+                        <td>{{address.city}}</td>
+                        <td>{{address.street}}</td>
+                        <td>{{address.house}}</td>
+                        <td>{{address.postIndex}}</td>
+                        <td>{{address.dateCreate | date:'dd.MM.yyyy, HH:mm'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script src="/Scripts/angular.js"></script>
+        <script src="/Scripts/angular-resource.js"></script>
+        <script src="/Scripts/jquery-3.1.1.min.js"></script>    
+        <script src="/Scripts/bootstrap.min.js"></script>        
+        <script src="/Scripts/app/app.js"></script>    
+        <script src="/Scripts/app/addressBookService.js"></script>    
+        <script src="/Scripts/Controllers/addressBookController.js"></script>
+    </body>
+</html>  
